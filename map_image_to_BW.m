@@ -31,7 +31,8 @@ if exist('SLAM_Gen_Map.png', 'file') == 2
     delete('SLAM_Gen_Map.png')
 end
 
-imagen = imbinarize(rawImage, 0.4);
+binaryImage = rawImage(:,:,1) > 200;
+imshow(binaryImage);
 
 exportgraphics(gca,'SLAM_Gen_Map.png','Resolution', 2400)                  % Creates an image of the plot with a resolution of 2400 DPI
 fprintf("Completed! \n")
