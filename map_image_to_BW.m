@@ -25,6 +25,15 @@
 %        knnsearch. The image generated is named as 
 %        'SLAM_Gen_Map.png'
 %----------------------------------------------%
+
+%% Remove old analysis files
+
+if exist('SLAM_Gen_Map.png', 'file') == 2
+    delete('SLAM_Gen_Map.png')
+end
+
+clear
+
 rawImage = imread('Generated_SLAM_Map.pgm');
 
 if exist('SLAM_Gen_Map.png', 'file') == 2
